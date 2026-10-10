@@ -1,0 +1,29 @@
+/**
+ * Registro de opción en el Customizer para el botón Scroll to Top.
+ */
+function mi_tema_customize_scroll_to_top( $wp_customize ) {
+    // Sección
+    $wp_customize->add_section( 'mi_tema_scroll_section', array(
+        'title'    => __( 'Botón Volver Arriba', 'mi-tema' ),
+        'priority' => 120,
+    ) );
+
+    // Setting con valor por defecto 'left'
+    $wp_customize->add_setting( 'scroll_to_top_position', array(
+        'default'           => 'left',
+        'sanitize_callback' => 'sanitize_key',
+    ) );
+
+    // Control (Select: Izquierda, Derecha, Oculto)
+    $wp_customize->add_control( 'scroll_to_top_position', array(
+        'label'    => __( 'Posición del botón Volver Arriba', 'mi-tema' ),
+        'section'  => 'mi_tema_scroll_section',
+        'type'     => 'select',
+        'choices'  => array(
+            'left'  => __( 'Izquierda (Default)', 'mi-tema' ),
+            'right' => __( 'Derecha', 'mi-tema' ),
+            'hide'  => __( 'Ocultar / Desactivar', 'mi-tema' ),
+        ),
+    ) );
+}
+add_action( 'customize_register', 'mi_tema_customize_scroll_to_top' );
