@@ -96,7 +96,9 @@ if ( 'hide' !== $scroll_position ) :
 		}
 	</style>
 	<button id="scroll-to-top" class="scroll-to-top <?php echo esc_attr( $position_class ); ?>" aria-label="<?php esc_attr_e( 'Volver arriba', 'mi-tema' ); ?>" type="button">
-		<span class="wpclasico icon-angle_up" aria-hidden="true"></span>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
 	</button>
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
